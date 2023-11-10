@@ -1,0 +1,24 @@
+﻿@{
+    Layout = "_Layout";
+}
+<head>
+    <link rel="stylesheet" href="~/css/SignIn.css" asp-append-version="true" />
+</head>
+<div class="container mt-5">
+    <h2>Sign In</h2>
+    <form method="post" action="@Url.Action("SignIn", "Account")">
+        <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password:</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+        <div class="btn-container">
+            <button type="submit">Sign In</button>
+        </div>
+        <a href="@Url.Action("ForgotPassword", "Account")" class="btn btn-primary">Forgot Password</a>
+    </form>
+</div>
+

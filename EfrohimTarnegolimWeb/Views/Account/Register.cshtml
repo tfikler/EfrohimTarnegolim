@@ -1,0 +1,37 @@
+﻿<h1>@ViewData["Title"]</h1>
+<head>
+    <link rel="stylesheet" href="~/css/RegisterStyle.css" asp-append-version="true" />
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Register</h2>
+        <form method="post" action="/Account/Register">
+            <label for="username">Full Name:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">University Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="yearOfStudies">Year Of Studies:</label>
+            <select id="yearOfStudies" name="yearOfStudies" required>
+                <option value="First Year">First Year</option>
+                <option value="Second Year">Second Year</option>
+                <option value="Third Year">Third Year</option>
+                <option value="Fourth Year">Fourth Year</option>
+            </select>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+
+
+            <input type="submit" value="Register">
+        </form>
+    </div>
+
+</body>
