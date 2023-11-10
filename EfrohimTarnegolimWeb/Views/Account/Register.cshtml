@@ -7,12 +7,12 @@
 
     <div class="container">
         <h2>Register</h2>
-        <form method="post" action="/Account/Register">
-            <label for="username">Full Name:</label>
-            <input type="text" id="username" name="username" required>
+        <form method="post" action="/Account/SuccessLogin">
+            <label asp-for="FullName" for="username">Full Name:</label>
+            <input asp-for="FullName" type="text" id="username" name="username" required>
 
-            <label for="email">University Email:</label>
-            <input type="email" id="email" name="email" required>
+            <label asp-for="Email" for="email">University Email:</label>
+            <input asp-for="Email" type="email" id="email" name="email" required>
 
             <label for="yearOfStudies">Year Of Studies:</label>
             <select id="yearOfStudies" name="yearOfStudies" required>
@@ -22,13 +22,11 @@
                 <option value="Fourth Year">Fourth Year</option>
             </select>
             
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+            <label asp-for="Password" for="password">Password:</label>
+            <input asp-for="Password" type="password" id="password" name="password" required>
 
             <label for="confirmPassword">Confirm Password:</label>
             <input type="password" id="confirmPassword" name="confirmPassword" required>
-
-
 
             <input type="submit" value="Register">
         </form>
