@@ -1,6 +1,7 @@
 ﻿@{
     Layout = "_Layout";
 }
+@model EfrohimTarnegolimWeb.Models.UserModel
 <head>
     <link rel="stylesheet" href="~/css/SignIn.css" asp-append-version="true" />
 </head>
@@ -8,12 +9,12 @@
     <h2>Sign In</h2>
     <form method="post" action="@Url.Action("SignIn", "Account")">
         <div class="mb-3">
-            <label for="email" class="form-label">Email:</label>
-            <input type="email" class="form-control" id="email" name="email" required>
+            <label asp-for="Email" for="email" class="form-label">Email:</label>
+            <input asp-for="Email" type="email" class="form-control" id="email" name="email" required>
         </div>
         <div class="mb-3">
-            <label for="password" class="form-label">Password:</label>
-            <input type="password" class="form-control" id="password" name="password" required>
+            <label asp-for="Password" for="password" class="form-label">Password:</label>
+            <input asp-for="Password" type="password" class="form-control" id="password" name="password" required>
         </div>
         <div class="btn-container">
             <button type="submit">Sign In</button>
