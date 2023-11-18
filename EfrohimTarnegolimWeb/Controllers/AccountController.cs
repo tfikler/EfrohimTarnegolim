@@ -27,8 +27,11 @@ namespace EfrohimTarnegolimWeb.Controllers
         {
             _registerDAO.InsertRegisterUserToDatabase(userModel);
 
-            // Redirect to a success page or handle as needed
-            return RedirectToAction("RegistrationSuccess");
+            // Store the user's name in TempData to display it on the home page
+            TempData["UserName"] = userModel.FullName;
+
+            // Redirect to the home page
+            return RedirectToAction("Index", "Home");
         }
 
         public IActionResult SignIn()

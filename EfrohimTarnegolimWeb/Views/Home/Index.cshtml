@@ -3,6 +3,13 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+    @if (ViewData["UserName"] != null)
+    {
+        <h1 class="display-4">Welcome, @ViewData["UserName"]!</h1>
+    }
+    else
+    {
+        <h1 class="display-4">Welcome</h1>
+    }
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
