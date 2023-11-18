@@ -1,4 +1,13 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿function validatePasswords() {
+    var password = document.getElementById("password").value;
+    var confirmPassword = document.getElementById("confirmPassword").value;
+    var passwordError = document.getElementById("passwordError");
 
-// Write your JavaScript code.
+    if (password !== confirmPassword) {
+        passwordError.innerText = "Passwords do not match";
+        return false; // Prevent form submission
+    } else {
+        passwordError.innerText = "";
+        return true; // Allow form submission
+    }
+}

@@ -15,14 +15,16 @@ namespace EfrohimTarnegolimWeb.Services
         
         public void InsertRegisterUserToDatabase(UserModel userModel)
         {
-            string sqlStatement = "INSERT INTO Users (FullName, Email, Password) VALUES (@FullName, @Email, @Password)";
+            string sqlStatement = "INSERT INTO RegisteredUsers (FullName, Email, Password, IDNumber, YearOfStudies) VALUES (@FullName, @Email, @Password, @IDNumber, @YearOfStudies)";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(sqlStatement, connection);
-                command.Parameters.Add("@FullName", SqlDbType.VarChar, 40).Value = "tomer";
-                command.Parameters.AddWithValue("@Email", userModel.Email);
-                command.Parameters.AddWithValue("@Password", userModel.Password);
-                
+                command.Parameters.Add("@FullName", SqlDbType.NChar, 40).Value = userModel.FullName;
+                command.Parameters.Add("@Email", SqlDbType.VarChar, 40).Value = userModel.Email;
+                command.Parameters.Add("@Password", SqlDbType.VarChar, 40).Value=userModel.Password;
+                command.Parameters.Add("@IDNumber", SqlDbType.VarChar, 40).Value = userModel.IDNumber;
+                command.Parameters.Add("@YearOfStudies", SqlDbType.VarChar, 40).Value = userModel.YearOfStudies;
+
                 try
                 {
                     connection.Open();

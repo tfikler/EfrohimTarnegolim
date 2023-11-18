@@ -1,18 +1,22 @@
 ﻿@model EfrohimTarnegolimWeb.Models.UserModel
 <head>
     <link rel="stylesheet" href="~/css/RegisterStyle.css" asp-append-version="true" />
+    <script src="~/js/site.js"></script>
 </head>
 
 <body>
 
     <div class="container">
         <h2>Register</h2>
-        <form method="post" action="/Account/SuccessLogin">
-            <label asp-for="FullName" for="username">Full Name:</label>
-            <input asp-for="FullName" type="text" id="username" name="username" required>
+        <form method="post" action="/Account/SuccessLogin" onsubmit="return validatePasswords()">
+            <label asp-for="FullName" for="FullName">Full Name:</label>
+            <input asp-for="FullName" type="text" id="FullName" name="FullName" required>
 
             <label asp-for="Email" for="email">University Email:</label>
             <input asp-for="Email" type="email" id="email" name="email" required>
+
+            <label asp-for="IDNumber" for="IDNumber">ID Number:</label>
+            <input asp-for="IDNumber" type="IDNumber" id="IDNumber" name="IDNumber" required>
 
             <label for="yearOfStudies">Year Of Studies:</label>
             <select id="yearOfStudies" name="yearOfStudies" required>
@@ -27,6 +31,7 @@
 
             <label for="confirmPassword">Confirm Password:</label>
             <input type="password" id="confirmPassword" name="confirmPassword" required>
+            <span id="passwordError" style="color: red;"></span>
 
             <input type="submit" value="Register">
         </form>
